@@ -1,0 +1,158 @@
+{
+    "mappings": {
+        "dynamic_templates": [
+            {
+                "result_data": {
+                    "path_match": "*resultData.*",
+                    "mapping": {
+                        "doc_values": false,
+                        "index": false
+                    }
+                }
+            }
+        ],
+        "properties": {
+            "type": {
+                "type": "keyword",
+                "normalizer": "lowercase_normalizer"
+            },
+            "id": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword",
+                        "normalizer": "lowercase_normalizer",
+                        "ignore_above": 256,
+                        "eager_global_ordinals": true
+                    }
+                }
+            },
+            "termFacetData": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "keyword",
+                        "normalizer": "lowercase_normalizer",
+                        "eager_global_ordinals": true
+                    },
+                    "name": {
+                        "type": "keyword",
+                        "normalizer": "lowercase_normalizer",
+                        "eager_global_ordinals": true
+                    },
+                    "value": {
+                        "type": "keyword",
+                        "normalizer": "lowercase_normalizer",
+                        "eager_global_ordinals": true
+                    }
+                }
+            },
+            "numberFacetData": {
+                "type": "nested",
+                "properties": {
+                    "name": {
+                        "type": "keyword",
+                        "normalizer": "lowercase_normalizer",
+                        "eager_global_ordinals": true
+                    },
+                    "value": {
+                        "type": "float"
+                    }
+                }
+            },
+            "pathFacetData": {
+                "type": "nested",
+                "properties": {
+                    "name": {
+                        "type": "keyword",
+                        "normalizer": "lowercase_normalizer",
+                        "eager_global_ordinals": true
+                    },
+                    "value": {
+                        "type": "keyword",
+                        "normalizer": "lowercase_normalizer",
+                        "eager_global_ordinals": true
+                    },
+                    "type": {
+                        "type": "keyword",
+                        "normalizer": "lowercase_normalizer",
+                        "eager_global_ordinals": true
+                    },
+                    "id": {
+                        "type": "keyword",
+                        "normalizer": "lowercase_normalizer",
+                        "eager_global_ordinals": true
+                    }
+                }
+            },
+            "completion_terms": {
+                "type": "nested",
+                "properties": {
+                    "tag": {
+                        "type": "text",
+                        "analyzer": "standard",
+                        "fields": {
+                            "as_you_type": {
+                                "type": "search_as_you_type"
+                            },
+                            "edge_ngram": {
+                                "type": "text",
+                                "analyzer": "autocomplete",
+                                "search_analyzer": "autocomplete_search"
+                            },
+                            "keyword": {
+                                "type": "keyword",
+                                "normalizer": "lowercase_normalizer",
+                                "eager_global_ordinals": true
+                            }
+                        }
+                    }
+                }
+            },
+            "suggestion_terms": {
+                "type": "text",
+                "analyzer": "standard"
+            },
+            "search_data": {
+                "properties": {
+                    "full_text": {
+                        "type": "text",
+                        "analyzer": "minimal",
+                        "fields": {
+                            "ngram": {
+                                "type": "text",
+                                "analyzer": "ngram"
+                            },
+                            "shingles": {
+                                "type": "text",
+                                "analyzer": "shingles"
+                            },
+                            "standard": {
+                                "type": "text",
+                                "analyzer": "custom_standard"
+                            }
+                        }
+                    },
+                    "full_text_boosted": {
+                        "type": "text",
+                        "analyzer": "minimal",
+                        "fields": {
+                            "ngram": {
+                                "type": "text",
+                                "analyzer": "ngram"
+                            },
+                            "shingles": {
+                                "type": "text",
+                                "analyzer": "shingles"
+                            },
+                            "standard": {
+                                "type": "text",
+                                "analyzer": "custom_standard"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

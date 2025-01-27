@@ -1,0 +1,541 @@
+{
+  "tookInMillis": 79,
+  "inputURI": "",
+  "slices": [
+    {
+      "label": "main",
+      "matchCount": 7,
+      "nextOffset": 7,
+      "nextLink": null,
+      "resultLink": "",
+      "hits": [
+        {
+          "index": "ocs-1-test-en",
+          "document": {
+            "id": "001",
+            "data": {
+              "color": {
+                "code": null,
+                "name": "color",
+                "value": "black"
+              },
+              "price": 824.5,
+              "artNr": "b10",
+              "category": [
+                "Sport/Bikes"
+              ],
+              "stock": 10,
+              "title": "Bike C1",
+              "brand": "Barfoo"
+            }
+          },
+          "matchedQueries": [
+            "_match_all"
+          ],
+          "metaData": {
+            "score": 13.0,
+            "sort_values": [],
+            "version": -1
+          }
+        },
+        {
+          "index": "ocs-1-test-en",
+          "document": {
+            "id": "007",
+            "data": {
+              "price": 1234.99,
+              "artNr": "f12",
+              "category": [
+                "Sport/Bikes"
+              ],
+              "stock": 10,
+              "title": "Carbon Bike",
+              "brand": "Fnord"
+            }
+          },
+          "matchedQueries": [
+            "_match_all"
+          ],
+          "metaData": {
+            "score": 13.0,
+            "sort_values": [],
+            "version": -1
+          }
+        },
+        {
+          "index": "ocs-1-test-en",
+          "document": {
+            "id": "002",
+            "data": {
+              "color": [
+                {
+                  "code": null,
+                  "name": "color",
+                  "value": "blue"
+                },
+                {
+                  "code": null,
+                  "name": "color",
+                  "value": "silver"
+                }
+              ],
+              "price": 34.2,
+              "artNr": "a21",
+              "category": [
+                "Sport/Bike Accessories"
+              ],
+              "stock": 5,
+              "title": "Helmet X34",
+              "brand": "Helmut"
+            }
+          },
+          "matchedQueries": [
+            "_match_all"
+          ],
+          "metaData": {
+            "score": 6.75,
+            "sort_values": [],
+            "version": -1
+          }
+        },
+        {
+          "index": "ocs-1-test-en",
+          "document": {
+            "id": "003",
+            "data": {
+              "price": 15.99,
+              "artNr": "b11",
+              "category": [
+                "Sport/Bike Accessories"
+              ],
+              "stock": 3,
+              "title": "Bike Light",
+              "brand": "Barfoo"
+            }
+          },
+          "matchedQueries": [
+            "_match_all"
+          ],
+          "metaData": {
+            "score": 4.25,
+            "sort_values": [],
+            "version": -1
+          }
+        },
+        {
+          "index": "ocs-1-test-en",
+          "document": {
+            "id": "004",
+            "data": {
+              "color": {
+                "code": null,
+                "name": "color",
+                "value": "black and yellow"
+              },
+              "price": 19.99,
+              "artNr": "av30",
+              "category": [
+                "Apparel/For Him"
+              ],
+              "stock": 1,
+              "title": "Striped Shirt",
+              "brand": "Avarel"
+            }
+          },
+          "matchedQueries": [
+            "_match_all"
+          ],
+          "metaData": {
+            "score": 1.75,
+            "sort_values": [],
+            "version": -1
+          }
+        },
+        {
+          "index": "ocs-1-test-en",
+          "document": {
+            "id": "005",
+            "data": {
+              "price": 25.5,
+              "artNr": "fu19",
+              "category": [
+                "Apparel/For Her"
+              ],
+              "stock": 0,
+              "title": "Pretty Skirt",
+              "brand": "Fluffy Unicorn"
+            }
+          },
+          "matchedQueries": [
+            "_match_all"
+          ],
+          "metaData": {
+            "score": 0.5,
+            "sort_values": [],
+            "version": -1
+          }
+        },
+        {
+          "index": "ocs-1-test-en",
+          "document": {
+            "id": "006",
+            "data": {
+              "price": 19.9,
+              "artNr": "av31",
+              "category": [
+                "Apparel/For Her"
+              ],
+              "stock": 0,
+              "title": "striped pants",
+              "brand": "Avarel"
+            }
+          },
+          "matchedQueries": [
+            "_match_all"
+          ],
+          "metaData": {
+            "score": 0.5,
+            "sort_values": [],
+            "version": -1
+          }
+        }
+      ],
+      "facets": [
+        {
+          "fieldName": "category",
+          "absoluteFacetCoverage": 14,
+          "isFiltered": false,
+          "entries": [
+            {
+              "type": "hierarchical",
+              "key": "Sport",
+              "id": "c1",
+              "docCount": 4,
+              "link": "category=Sport",
+              "selected": false,
+              "children": [
+                {
+                  "type": "hierarchical",
+                  "key": "Bike Accessories",
+                  "id": "c1.2",
+                  "docCount": 2,
+                  "link": "category=Sport%2FBike+Accessories",
+                  "selected": false,
+                  "children": [],
+                  "path": "Sport/Bike Accessories"
+                },
+                {
+                  "type": "hierarchical",
+                  "key": "Bikes",
+                  "id": "c1.1",
+                  "docCount": 2,
+                  "link": "category=Sport%2FBikes",
+                  "selected": false,
+                  "children": [],
+                  "path": "Sport/Bikes"
+                }
+              ],
+              "path": "Sport"
+            },
+            {
+              "type": "hierarchical",
+              "key": "Apparel",
+              "id": "c2",
+              "docCount": 3,
+              "link": "category=Apparel",
+              "selected": false,
+              "children": [
+                {
+                  "type": "hierarchical",
+                  "key": "For Her",
+                  "id": "c2.2",
+                  "docCount": 2,
+                  "link": "category=Apparel%2FFor+Her",
+                  "selected": false,
+                  "children": [],
+                  "path": "Apparel/For Her"
+                },
+                {
+                  "type": "hierarchical",
+                  "key": "For Him",
+                  "id": "c2.1",
+                  "docCount": 1,
+                  "link": "category=Apparel%2FFor+Him",
+                  "selected": false,
+                  "children": [],
+                  "path": "Apparel/For Him"
+                }
+              ],
+              "path": "Apparel"
+            }
+          ],
+          "type": "hierarchical",
+          "meta": {
+            "label": "Category",
+            "isExcludedFromFacetLimit": true,
+            "multiSelect": false,
+            "order": 1
+          },
+          "filtered": false
+        },
+        {
+          "fieldName": "brand",
+          "absoluteFacetCoverage": 7,
+          "isFiltered": false,
+          "entries": [
+            {
+              "type": "term",
+              "key": "Avarel",
+              "id": null,
+              "docCount": 2,
+              "link": "brand=avarel",
+              "selected": false
+            },
+            {
+              "type": "term",
+              "key": "Barfoo",
+              "id": null,
+              "docCount": 2,
+              "link": "brand=barfoo",
+              "selected": false
+            },
+            {
+              "type": "term",
+              "key": "Fluffy Unicorn",
+              "id": null,
+              "docCount": 1,
+              "link": "brand=fluffy+unicorn",
+              "selected": false
+            },
+            {
+              "type": "term",
+              "key": "Fnord",
+              "id": null,
+              "docCount": 1,
+              "link": "brand=fnord",
+              "selected": false
+            },
+            {
+              "type": "term",
+              "key": "Helmut",
+              "id": null,
+              "docCount": 1,
+              "link": "brand=helmut",
+              "selected": false
+            }
+          ],
+          "type": "term",
+          "meta": {
+            "label": "Brand",
+            "isExcludedFromFacetLimit": true,
+            "multiSelect": true,
+            "order": 2
+          },
+          "filtered": false
+        },
+        {
+          "fieldName": "price",
+          "absoluteFacetCoverage": 7,
+          "isFiltered": false,
+          "entries": [
+            {
+              "type": "interval",
+              "key": "< 19.99\u20ac",
+              "id": null,
+              "docCount": 3,
+              "link": "price=15.0%2C19.99",
+              "selected": false,
+              "lowerBound": 15.0,
+              "upperBound": 19.99
+            },
+            {
+              "type": "interval",
+              "key": "25\u20ac - 29.99\u20ac",
+              "id": null,
+              "docCount": 1,
+              "link": "price=25.0%2C29.99",
+              "selected": false,
+              "lowerBound": 25.0,
+              "upperBound": 29.99
+            },
+            {
+              "type": "interval",
+              "key": "30\u20ac - 34.99\u20ac",
+              "id": null,
+              "docCount": 1,
+              "link": "price=30.0%2C34.99",
+              "selected": false,
+              "lowerBound": 30.0,
+              "upperBound": 34.99
+            },
+            {
+              "type": "interval",
+              "key": "820\u20ac - 824.99\u20ac",
+              "id": null,
+              "docCount": 1,
+              "link": "price=820.0%2C824.99",
+              "selected": false,
+              "lowerBound": 820.0,
+              "upperBound": 824.99
+            },
+            {
+              "type": "interval",
+              "key": "1230\u20ac - 1234.99\u20ac",
+              "id": null,
+              "docCount": 1,
+              "link": "price=1230.0%2C1234.99",
+              "selected": false,
+              "lowerBound": 1230.0,
+              "upperBound": 1234.99
+            }
+          ],
+          "type": "interval",
+          "meta": {
+            "unit": "\u20ac",
+            "label": "Price",
+            "isExcludedFromFacetLimit": true,
+            "multiSelect": false,
+            "order": 3
+          },
+          "filtered": false
+        },
+        {
+          "fieldName": "size",
+          "absoluteFacetCoverage": 3,
+          "isFiltered": false,
+          "entries": [
+            {
+              "type": "term",
+              "key": "30",
+              "id": null,
+              "docCount": 1,
+              "link": "size=30",
+              "selected": false
+            },
+            {
+              "type": "term",
+              "key": "31",
+              "id": null,
+              "docCount": 1,
+              "link": "size=31",
+              "selected": false
+            },
+            {
+              "type": "term",
+              "key": "32",
+              "id": null,
+              "docCount": 1,
+              "link": "size=32",
+              "selected": false
+            }
+          ],
+          "type": "term",
+          "meta": {
+            "detail-links": 5,
+            "label": "Size",
+            "isExcludedFromFacetLimit": true,
+            "multiSelect": false,
+            "order": 4
+          },
+          "filtered": false
+        },
+        {
+          "fieldName": "color",
+          "absoluteFacetCoverage": 5,
+          "isFiltered": false,
+          "entries": [
+            {
+              "type": "term",
+              "key": "black",
+              "id": null,
+              "docCount": 1,
+              "link": "color=black",
+              "selected": false
+            },
+            {
+              "type": "term",
+              "key": "black and yellow",
+              "id": null,
+              "docCount": 1,
+              "link": "color=black+and+yellow",
+              "selected": false
+            },
+            {
+              "type": "term",
+              "key": "blue",
+              "id": null,
+              "docCount": 1,
+              "link": "color=blue",
+              "selected": false
+            },
+            {
+              "type": "term",
+              "key": "silver",
+              "id": null,
+              "docCount": 1,
+              "link": "color=silver",
+              "selected": false
+            },
+            {
+              "type": "term",
+              "key": "pink",
+              "id": null,
+              "docCount": 1,
+              "link": "color=pink",
+              "selected": false
+            }
+          ],
+          "type": "term",
+          "meta": {
+            "label": "Color",
+            "multiSelect": true,
+            "order": 1000
+          },
+          "filtered": false
+        }
+      ]
+    }
+  ],
+  "sortOptions": [
+    {
+      "label": "price.asc",
+      "field": "price",
+      "sortOrder": "ASC",
+      "isActive": false,
+      "link": "sort=price",
+      "active": false
+    },
+    {
+      "label": "price.desc",
+      "field": "price",
+      "sortOrder": "DESC",
+      "isActive": false,
+      "link": "sort=-price",
+      "active": false
+    },
+    {
+      "label": "title.asc",
+      "field": "title",
+      "sortOrder": "ASC",
+      "isActive": false,
+      "link": "sort=title",
+      "active": false
+    },
+    {
+      "label": "title.desc",
+      "field": "title",
+      "sortOrder": "DESC",
+      "isActive": false,
+      "link": "sort=-title",
+      "active": false
+    }
+  ],
+  "meta": {
+    "query_executed": "_match_all",
+    "noQuery": true,
+    "query_stage": 0,
+    "query_filters": [],
+    "query_boostings": [],
+    "query_strategy": "_match_all"
+  }
+}

@@ -1,0 +1,143 @@
+[{
+    "type": "staple",
+    "search_result_data": {
+      "sku": "SP11968",
+      "name": "Fortis Fäustel, mit Eschen-Stiel",
+      "preview_image": "faeustel-din6475-2000g-eschenstiel-fortis-21049292-0-JlHR5nOi-l.jpg",
+      "number_of_products": "4",
+      "final_gross_price": "822",
+      "final_net_price": "691",
+      "base_gross_price": null,
+      "base_price_unit": null,
+      "url": "/handwerkzeug/fortis-faeustel-mit-eschen-stiel-SP11968"
+    },
+    "search_data": [
+      {
+        "full_text": " 21049289  4317784792714 04317784792714 Fäustel DIN 6475<br><br>Stahlgeschmiedet, Kopf schwarz lackiert, Bahnen poliert, doppelt geschweifter Eschenstiel mit ozeanblau lackiertem Handende. SP11968 SP11968",
+        "full_text_boosted": " Fortis Fäustel DIN6475 1000g Eschenstiel FORTIS 1000 Fäustel Handwerkzeug Hammer Fäustel Fortis Fäustel, mit Eschen-Stiel Fortis Fäustel, mit Eschen-Stiel",
+        "keyword_facets": [
+          {
+            "facet_name": "manufacturer",
+            "facet_value": "Fortis"
+          },
+          {
+            "facet_name": "hammer_weight",
+            "facet_value": "1000"
+          }
+        ],
+        "number_facets": [
+          {
+            "facet_name": "final_gross_price",
+            "facet_value": 822
+          }
+        ]
+      },
+      {
+        "full_text": " 21049290  4317784792721 04317784792721 Fäustel DIN 6475<br><br>Stahlgeschmiedet, Kopf schwarz lackiert, Bahnen poliert, doppelt geschweifter Eschenstiel mit ozeanblau lackiertem Handende. SP11968 SP11968",
+        "full_text_boosted": " Fortis Fäustel DIN6475 1250g Eschenstiel FORTIS 1250 Fäustel Handwerkzeug Hammer Fäustel Fortis Fäustel, mit Eschen-Stiel Fortis Fäustel, mit Eschen-Stiel",
+        "keyword_facets": [
+          {
+            "facet_name": "manufacturer",
+            "facet_value": "Fortis"
+          },
+          {
+            "facet_name": "hammer_weight",
+            "facet_value": "1250"
+          }
+        ],
+        "number_facets": [
+          {
+            "facet_name": "final_gross_price",
+            "facet_value": 1020
+          }
+        ]
+      },
+      {
+        "full_text": " 21049291  4317784792738 04317784792738 Fäustel DIN 6475<br><br>Stahlgeschmiedet, Kopf schwarz lackiert, Bahnen poliert, doppelt geschweifter Eschenstiel mit ozeanblau lackiertem Handende. SP11968 SP11968",
+        "full_text_boosted": " Fortis Fäustel DIN6475 1500g Eschenstiel FORTIS 1500 Fäustel Handwerkzeug Hammer Fäustel Fortis Fäustel, mit Eschen-Stiel Fortis Fäustel, mit Eschen-Stiel",
+        "keyword_facets": [
+          {
+            "facet_name": "manufacturer",
+            "facet_value": "Fortis"
+          },
+          {
+            "facet_name": "hammer_weight",
+            "facet_value": "1500"
+          }
+        ],
+        "number_facets": [
+          {
+            "facet_name": "final_gross_price",
+            "facet_value": 1039
+          }
+        ]
+      },
+      {
+        "full_text": " 21049292  4317784792745 04317784792745 Fäustel DIN 6475<br><br>Stahlgeschmiedet, Kopf schwarz lackiert, Bahnen poliert, doppelt geschweifter Eschenstiel mit ozeanblau lackiertem Handende. SP11968 SP11968",
+        "full_text_boosted": " Fortis Fäustel DIN6475 2000g Eschenstiel FORTIS 2000 Fäustel Handwerkzeug Hammer Fäustel Fortis Fäustel, mit Eschen-Stiel Fortis Fäustel, mit Eschen-Stiel",
+        "keyword_facets": [
+          {
+            "facet_name": "manufacturer",
+            "facet_value": "Fortis"
+          },
+          {
+            "facet_name": "hammer_weight",
+            "facet_value": "2000"
+          }
+        ],
+        "number_facet": [
+          {
+            "facet_name": "final_gross_price",
+            "facet_value": 1194
+          }
+        ]
+      }
+    ],
+    "completion_terms": [
+      "Fortis",
+      "1000",
+      "1250",
+      "1500",
+      "2000",
+      "Fäustel",
+      "Handwerkzeug",
+      "Hammer",
+      "Fäustel"
+    ],
+    "suggestion_terms": [
+      "Fortis Fäustel, mit Eschen-Stiel"
+    ],
+    "number_sort": {
+      "final_gross_price": 822
+    },
+    "string_sort": {
+      "name": "Fortis Fäustel, mit Eschen-Stiel"
+    },
+    "scores": {
+      "top_seller": 0.91,
+      "pdp_impressions": 0.38,
+      "sale_impressions_rate": 0.8,
+      "data_quality": 0.87,
+      "delivery_speed": 0.85,
+      "random": 0.75,
+      "stock": 1
+    },
+    "category": {
+      "direct_parents": [
+        "bpka"
+      ],
+      "all_parents": [
+        "bost",
+        "boum",
+        "boun",
+        "bpka"
+      ],
+      "paths": [
+        "boum-boun-bpka"
+      ]
+    },
+    "category_scores": {
+      "number_of_impressions": 265,
+      "number_of_orders": 23
+    }
+  }]

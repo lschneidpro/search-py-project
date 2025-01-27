@@ -1,0 +1,523 @@
+{
+    "ocs-2-test-en": {
+        "mappings": {
+            "dynamic_templates": [
+                {
+                    "result_data": {
+                        "path_match": "*resultData.*",
+                        "mapping": {
+                            "doc_values": false,
+                            "index": false
+                        }
+                    }
+                },
+                {
+                    "scores_float": {
+                        "path_match": "*scores.*",
+                        "match_mapping_type": "double",
+                        "mapping": {
+                            "type": "float"
+                        }
+                    }
+                },
+                {
+                    "scores_date": {
+                        "path_match": "*scores.*",
+                        "match_mapping_type": "string",
+                        "mapping": {
+                            "type": "date"
+                        }
+                    }
+                },
+                {
+                    "scores_date": {
+                        "path_match": "*scores.*",
+                        "match_mapping_type": "object",
+                        "mapping": {
+                            "type": "rank_features"
+                        }
+                    }
+                },
+                {
+                    "string_sort_data": {
+                        "path_match": "*sortData.*",
+                        "match_mapping_type": "string",
+                        "mapping": {
+                            "eager_global_ordinals": true,
+                            "type": "keyword"
+                        }
+                    }
+                },
+                {
+                    "string_filter_data": {
+                        "path_match": "*filterData.*",
+                        "match_mapping_type": "string",
+                        "mapping": {
+                            "analyzer": "filter_normalizer",
+                            "eager_global_ordinals": false,
+                            "fielddata": false,
+                            "index_options": "docs",
+                            "norms": false,
+                            "type": "text"
+                        }
+                    }
+                },
+                {
+                    "search_data": {
+                        "path_match": "*searchData.*",
+                        "mapping": {
+                            "analyzer": "minimal",
+                            "copy_to": "searchable_numeric_patterns",
+                            "fielddata": true,
+                            "fields": {
+                                "standard": {
+                                    "norms": false,
+                                    "analyzer": "standard",
+                                    "type": "text"
+                                },
+                                "shingles": {
+                                    "norms": false,
+                                    "analyzer": "shingles",
+                                    "type": "text"
+                                },
+                                "ngram": {
+                                    "norms": false,
+                                    "analyzer": "ngram",
+                                    "type": "text"
+                                }
+                            },
+                            "norms": false,
+                            "type": "text"
+                        }
+                    }
+                }
+            ],
+            "properties": {
+                "categories": {
+                    "type": "object"
+                },
+                "filterData": {
+                    "properties": {
+                        "stock": {
+                            "type": "long"
+                        }
+                    }
+                },
+                "id": {
+                    "type": "text",
+                    "fields": {
+                        "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                        }
+                    }
+                },
+                "numberFacetData": {
+                    "type": "nested",
+                    "properties": {
+                        "name": {
+                            "type": "keyword",
+                            "eager_global_ordinals": true
+                        },
+                        "value": {
+                            "type": "float"
+                        }
+                    }
+                },
+                "pathFacetData": {
+                    "type": "nested",
+                    "properties": {
+                        "id": {
+                            "type": "keyword",
+                            "eager_global_ordinals": true
+                        },
+                        "name": {
+                            "type": "keyword",
+                            "eager_global_ordinals": true
+                        },
+                        "value": {
+                            "type": "keyword",
+                            "eager_global_ordinals": true
+                        }
+                    }
+                },
+                "resultData": {
+                    "properties": {
+                        "artNr": {
+                            "type": "text",
+                            "index": false
+                        },
+                        "brand": {
+                            "type": "text",
+                            "index": false
+                        },
+                        "category": {
+                            "type": "text",
+                            "index": false
+                        },
+                        "color": {
+                            "properties": {
+                                "name": {
+                                    "type": "text",
+                                    "index": false
+                                },
+                                "value": {
+                                    "type": "text",
+                                    "index": false
+                                }
+                            }
+                        },
+                        "price": {
+                            "type": "float",
+                            "index": false,
+                            "doc_values": false
+                        },
+                        "stock": {
+                            "type": "long",
+                            "index": false,
+                            "doc_values": false
+                        },
+                        "title": {
+                            "type": "text",
+                            "index": false
+                        }
+                    }
+                },
+                "scores": {
+                    "properties": {
+                        "stock": {
+                            "type": "long"
+                        }
+                    }
+                },
+                "searchData": {
+                    "properties": {
+                        "artNr": {
+                            "type": "text",
+                            "fields": {
+                                "ngram": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "ngram"
+                                },
+                                "shingles": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "shingles"
+                                },
+                                "standard": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "standard"
+                                }
+                            },
+                            "copy_to": [
+                                "searchable_numeric_patterns"
+                            ],
+                            "norms": false,
+                            "analyzer": "minimal",
+                            "fielddata": true
+                        },
+                        "brand": {
+                            "type": "text",
+                            "fields": {
+                                "ngram": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "ngram"
+                                },
+                                "shingles": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "shingles"
+                                },
+                                "standard": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "standard"
+                                }
+                            },
+                            "copy_to": [
+                                "searchable_numeric_patterns"
+                            ],
+                            "norms": false,
+                            "analyzer": "minimal",
+                            "fielddata": true
+                        },
+                        "category_leaf": {
+                            "type": "text",
+                            "fields": {
+                                "ngram": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "ngram"
+                                },
+                                "shingles": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "shingles"
+                                },
+                                "standard": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "standard"
+                                }
+                            },
+                            "copy_to": [
+                                "searchable_numeric_patterns"
+                            ],
+                            "norms": false,
+                            "analyzer": "minimal",
+                            "fielddata": true
+                        },
+                        "category_lvl_0": {
+                            "type": "text",
+                            "fields": {
+                                "ngram": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "ngram"
+                                },
+                                "shingles": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "shingles"
+                                },
+                                "standard": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "standard"
+                                }
+                            },
+                            "copy_to": [
+                                "searchable_numeric_patterns"
+                            ],
+                            "norms": false,
+                            "analyzer": "minimal",
+                            "fielddata": true
+                        },
+                        "category_lvl_1": {
+                            "type": "text",
+                            "fields": {
+                                "ngram": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "ngram"
+                                },
+                                "shingles": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "shingles"
+                                },
+                                "standard": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "standard"
+                                }
+                            },
+                            "copy_to": [
+                                "searchable_numeric_patterns"
+                            ],
+                            "norms": false,
+                            "analyzer": "minimal",
+                            "fielddata": true
+                        },
+                        "search_combi": {
+                            "type": "text",
+                            "fields": {
+                                "ngram": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "ngram"
+                                },
+                                "shingles": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "shingles"
+                                },
+                                "standard": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "standard"
+                                }
+                            },
+                            "copy_to": [
+                                "searchable_numeric_patterns"
+                            ],
+                            "norms": false,
+                            "analyzer": "minimal",
+                            "fielddata": true
+                        },
+                        "title": {
+                            "type": "text",
+                            "fields": {
+                                "ngram": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "ngram"
+                                },
+                                "shingles": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "shingles"
+                                },
+                                "standard": {
+                                    "type": "text",
+                                    "norms": false,
+                                    "analyzer": "standard"
+                                }
+                            },
+                            "copy_to": [
+                                "searchable_numeric_patterns"
+                            ],
+                            "norms": false,
+                            "analyzer": "minimal",
+                            "fielddata": true
+                        }
+                    }
+                },
+                "searchable_numeric_patterns": {
+                    "type": "text",
+                    "analyzer": "num_attributes"
+                },
+                "sortData": {
+                    "properties": {
+                        "price": {
+                            "type": "float"
+                        },
+                        "title": {
+                            "type": "keyword",
+                            "eager_global_ordinals": true
+                        }
+                    }
+                },
+                "suggest": {
+                    "type": "completion",
+                    "analyzer": "suggest",
+                    "preserve_separators": true,
+                    "preserve_position_increments": true,
+                    "max_input_length": 50
+                },
+                "termFacetData": {
+                    "type": "nested",
+                    "properties": {
+                        "id": {
+                            "type": "keyword",
+                            "eager_global_ordinals": true
+                        },
+                        "name": {
+                            "type": "keyword",
+                            "eager_global_ordinals": true
+                        },
+                        "value": {
+                            "type": "keyword",
+                            "eager_global_ordinals": true,
+                            "fields": {
+                                "normalized": {
+                                    "type": "text",
+                                    "index_options": "docs",
+                                    "norms": false,
+                                    "analyzer": "filter_normalizer"
+                                }
+                            }
+                        }
+                    }
+                },
+                "variants": {
+                    "type": "nested",
+                    "properties": {
+                        "filterData": {
+                            "type": "object"
+                        },
+                        "numberFacetData": {
+                            "type": "nested",
+                            "properties": {
+                                "name": {
+                                    "type": "keyword",
+                                    "eager_global_ordinals": true
+                                },
+                                "value": {
+                                    "type": "float"
+                                }
+                            }
+                        },
+                        "resultData": {
+                            "properties": {
+                                "color": {
+                                    "properties": {
+                                        "name": {
+                                            "type": "text",
+                                            "index": false
+                                        },
+                                        "value": {
+                                            "type": "text",
+                                            "index": false
+                                        }
+                                    }
+                                },
+                                "id": {
+                                    "type": "text",
+                                    "index": false
+                                },
+                                "price": {
+                                    "type": "float",
+                                    "index": false,
+                                    "doc_values": false
+                                },
+                                "size": {
+                                    "properties": {
+                                        "name": {
+                                            "type": "text",
+                                            "index": false
+                                        },
+                                        "value": {
+                                            "type": "text",
+                                            "index": false
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "scores": {
+                            "type": "object"
+                        },
+                        "searchData": {
+                            "type": "object"
+                        },
+                        "sortData": {
+                            "properties": {
+                                "price": {
+                                    "type": "float"
+                                }
+                            }
+                        },
+                        "termFacetData": {
+                            "type": "nested",
+                            "properties": {
+                                "id": {
+                                    "type": "keyword",
+                                    "eager_global_ordinals": true
+                                },
+                                "name": {
+                                    "type": "keyword",
+                                    "eager_global_ordinals": true
+                                },
+                                "value": {
+                                    "type": "keyword",
+                                    "eager_global_ordinals": true,
+                                    "fields": {
+                                        "normalized": {
+                                            "type": "text",
+                                            "norms": false,
+                                            "analyzer": "filter_normalizer"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

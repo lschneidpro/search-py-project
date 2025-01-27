@@ -1,0 +1,197 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1,
+    "index": {
+      "max_ngram_diff": 20
+    },
+    "analysis": {
+      "char_filter": {
+        "html": {
+          "type": "html_strip"
+        },
+        "irrelevant_chars": {
+          "pattern": "[^\\p{L}\\d_-]",
+          "type": "pattern_replace",
+          "replacement": " "
+        },
+        "word_border_marker": {
+          "pattern": "\\b",
+          "type": "pattern_replace",
+          "replacement": "_"
+        },
+        "word_border_mark_dedup": {
+          "pattern": "_{2,}",
+          "type": "pattern_replace",
+          "replacement": "_"
+        }
+      },
+      "tokenizer": {
+        "num_w_unit_tokens": {
+          "pattern": "(\\b[\\d.,']+(\\s*x\\s*[\\d.,']+)*+[\\s-]*[a-zA-Z\\\"]+)",
+          "type": "pattern",
+          "group": "1"
+        },
+        "trigram_tokenizer": {
+          "token_chars": [
+            "letter",
+            "digit"
+          ],
+          "min_gram": "3",
+          "type": "ngram",
+          "max_gram": "3"
+        },
+        "autocomplete": {
+          "type": "edge_ngram",
+          "min_gram": 2,
+          "max_gram": 20,
+          "token_chars": [
+            "letter",
+            "digit"
+          ]
+        }
+      },
+      "filter": {
+        "english_stop": {
+          "type": "stop",
+          "stopwords": "_english_"
+        },
+        "light_english_stemmer": {
+          "type": "stemmer",
+          "language": "light_english"
+        },
+        "english_possessive_stemmer": {
+          "type": "stemmer",
+          "language": "possessive_english"
+        },
+        "glued_shingle": {
+          "token_separator": "",
+          "type": "shingle"
+        },
+        "capture_separated_units": {
+          "type": "pattern_capture",
+          "patterns": "\\d\\s+[a-zA-Z]+"
+        },
+        "remove_whitespace": {
+          "pattern": "\\s+",
+          "type": "pattern_replace",
+          "replacement": ""
+        },
+        "inch_unit": {
+          "pattern": "\"",
+          "type": "pattern_replace",
+          "replacement": ""
+        },
+        "normalize_punctuation": {
+          "pattern": "[.,']+",
+          "type": "pattern_replace",
+          "replacement": "."
+        },
+        "remove_thousand_separator": {
+          "pattern": "\\.(\\d{3,})",
+          "type": "pattern_replace",
+          "replacement": "$1"
+        },
+        "float_trunc": {
+          "pattern": "(\\d+)\\.\\d+([a-z]+)",
+          "type": "pattern_replace",
+          "replacement": "$1$2"
+        }
+      },
+      "normalizer": {
+        "lowercase_normalizer": {
+          "type": "custom",
+          "filter": [
+            "lowercase"
+          ]
+        }
+      },
+      "analyzer": {
+        "autocomplete": {
+          "char_filter": [
+            "html",
+            "irrelevant_chars"
+          ],
+          "tokenizer": "autocomplete",
+          "filter": [
+            "lowercase",
+            "asciifolding"
+          ]
+        },
+        "autocomplete_search": {
+          "char_filter": [
+            "html",
+            "irrelevant_chars"
+          ],
+          "tokenizer": "whitespace",
+          "filter": [
+            "lowercase",
+            "asciifolding"
+          ]
+        },
+        "minimal": {
+          "char_filter": [
+            "html",
+            "irrelevant_chars"
+          ],
+          "tokenizer": "whitespace",
+          "filter": [
+            "lowercase",
+            "asciifolding"
+          ]
+        },
+        "custom_standard": {
+          "char_filter": [
+            "html",
+            "irrelevant_chars"
+          ],
+          "tokenizer": "standard",
+          "filter": [
+            "english_possessive_stemmer",
+            "lowercase",
+            "english_stop",
+            "light_english_stemmer",
+            "asciifolding"
+          ]
+        },
+        "shingles": {
+          "char_filter": [
+            "html"
+          ],
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "glued_shingle"
+          ]
+        },
+        "ngram": {
+          "char_filter": [
+            "html",
+            "irrelevant_chars",
+            "word_border_marker",
+            "word_border_mark_dedup"
+          ],
+          "tokenizer": "trigram_tokenizer",
+          "filter": [
+            "lowercase",
+            "asciifolding"
+          ]
+        },
+        "num_attributes": {
+          "tokenizer": "num_w_unit_tokens",
+          "filter": [
+            "capture_separated_units",
+            "remove_whitespace",
+            "inch_unit",
+            "lowercase",
+            "normalize_punctuation",
+            "remove_thousand_separator",
+            "float_trunc",
+            "unique"
+          ]
+        }
+      }
+    }
+  }
+}

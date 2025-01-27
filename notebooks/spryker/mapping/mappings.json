@@ -1,0 +1,116 @@
+{
+    "mappings": {
+        "dynamic_templates": [
+            {
+                "search_result_data": {
+                    "path_match": "search_result_data.*",
+                    "mapping": {
+                        "type": "keyword",
+                        "index": false
+                    }
+                }
+            },
+            {
+                "number_sort": {
+                    "path_match": "number_sort.*",
+                    "mapping": {
+                        "type": "double",
+                        "index": false
+                    }
+                }
+            },
+            {
+                "string_sort": {
+                    "path_match": "string_sort.*",
+                    "mapping": {
+                        "type": "keyword",
+                        "index": false
+                    }
+                }
+            },
+            {
+                "scores": {
+                    "path_match": "scores.*",
+                    "mapping": {
+                        "type": "double",
+                        "index": false
+                    }
+                }
+            },
+            {
+                "category": {
+                    "path_match": "category.*",
+                    "mapping": {
+                        "type": "keyword",
+                        "index": false
+                    }
+                }
+            },
+            {
+                "category_scores": {
+                    "path_match": "category_scores.*",
+                    "mapping": {
+                        "type": "integer",
+                        "index": false
+                    }
+                }
+            }
+        ],
+        "properties": {
+            "type": {
+                "type": "keyword"
+            },
+            "search_data": {
+                "type": "nested",
+                "properties": {
+                    "full_text": {
+                        "type": "text",
+                        "analyzer": "rebuilt_german",
+                        "search_analyzer": "rebuilt_german"
+                    },
+                    "full_text_boosted": {
+                        "type": "text",
+                        "analyzer": "rebuilt_german",
+                        "search_analyzer": "rebuilt_german"
+                    },
+                    "keyword_facets": {
+                        "type": "nested",
+                        "properties": {
+                            "facet_name": {
+                                "type": "keyword"
+                            },
+                            "facet_value": {
+                                "type": "keyword"
+                            }
+                        }
+                    },
+                    "number_facets": {
+                        "type": "nested",
+                        "properties": {
+                            "facet_name": {
+                                "type": "keyword"
+                            },
+                            "facet_value": {
+                                "type": "double"
+                            }
+                        }
+                    }
+                }
+            },
+            "completion_terms": {
+                "type": "keyword",
+                "fields": {
+                    "edge_ngram": {
+                        "type": "text",
+                        "analyzer": "completion_analyzer",
+                        "search_analyzer": "completion_analyzer"
+                    }
+                }
+            },
+            "suggestion_terms": {
+                "type": "text",
+                "analyzer": "suggestion_analyzer"
+            }
+        }
+    }
+}

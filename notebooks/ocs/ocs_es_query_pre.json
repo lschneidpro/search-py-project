@@ -1,0 +1,168 @@
+{
+    "type": "index_search_slowlog",
+    "timestamp": "2024-11-18T05:35:54,644Z",
+    "level": "TRACE",
+    "component": "i.s.s.query",
+    "cluster": {
+        "name": "docker-cluster",
+        "uuid": "rT9nGAo3RQSZ4uoJkWOp2Q"
+    },
+    "node": {
+        "name": "5fbd7bb8e22b",
+        "id": "jSJrHqyzQBOzjtaffeiXDQ"
+    },
+    "message": "[ocs-1-test-en][0]",
+    "execution": {
+        "took": "786.7micros",
+        "took_millis": 0,
+        "total_hits": "7 hits",
+        "search_type": "QUERY_THEN_FETCH",
+        "total_shards": 1
+    },
+    "source": {
+        "size": 0,
+        "aggregations": {
+            "_master_term_facets": {
+                "nested": {
+                    "path": "termFacetData"
+                },
+                "aggregations": {
+                    "_names": {
+                        "terms": {
+                            "field": "termFacetData.name",
+                            "size": 1000,
+                            "min_doc_count": 1,
+                            "shard_min_doc_count": 0,
+                            "show_term_doc_count_error": false,
+                            "order": [
+                                {
+                                    "_count": "desc"
+                                },
+                                {
+                                    "_key": "asc"
+                                }
+                            ]
+                        },
+                        "aggregations": {
+                            "_value_estimate": {
+                                "cardinality": {
+                                    "field": "termFacetData.value"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "_master_path_facets": {
+                "nested": {
+                    "path": "pathFacetData"
+                },
+                "aggregations": {
+                    "_names": {
+                        "terms": {
+                            "field": "pathFacetData.name",
+                            "size": 1000,
+                            "min_doc_count": 1,
+                            "shard_min_doc_count": 0,
+                            "show_term_doc_count_error": false,
+                            "order": [
+                                {
+                                    "_count": "desc"
+                                },
+                                {
+                                    "_key": "asc"
+                                }
+                            ]
+                        },
+                        "aggregations": {
+                            "_value_estimate": {
+                                "cardinality": {
+                                    "field": "pathFacetData.value"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "_master_number_facets": {
+                "nested": {
+                    "path": "numberFacetData"
+                },
+                "aggregations": {
+                    "_names": {
+                        "terms": {
+                            "field": "numberFacetData.name",
+                            "size": 1000,
+                            "min_doc_count": 1,
+                            "shard_min_doc_count": 0,
+                            "show_term_doc_count_error": false,
+                            "order": [
+                                {
+                                    "_count": "desc"
+                                },
+                                {
+                                    "_key": "asc"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "_variant_term_facets": {
+                "nested": {
+                    "path": "variants.termFacetData"
+                },
+                "aggregations": {
+                    "_names": {
+                        "terms": {
+                            "field": "variants.termFacetData.name",
+                            "size": 1000,
+                            "min_doc_count": 1,
+                            "shard_min_doc_count": 0,
+                            "show_term_doc_count_error": false,
+                            "order": [
+                                {
+                                    "_count": "desc"
+                                },
+                                {
+                                    "_key": "asc"
+                                }
+                            ]
+                        },
+                        "aggregations": {
+                            "_value_estimate": {
+                                "cardinality": {
+                                    "field": "variants.termFacetData.value"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "_variant_number_facets": {
+                "nested": {
+                    "path": "variants.numberFacetData"
+                },
+                "aggregations": {
+                    "_names": {
+                        "terms": {
+                            "field": "variants.numberFacetData.name",
+                            "size": 1000,
+                            "min_doc_count": 1,
+                            "shard_min_doc_count": 0,
+                            "show_term_doc_count_error": false,
+                            "order": [
+                                {
+                                    "_count": "desc"
+                                },
+                                {
+                                    "_key": "asc"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

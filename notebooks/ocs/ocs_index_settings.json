@@ -1,0 +1,211 @@
+{
+    "ocs-2-test-en": {
+        "settings": {
+            "index": {
+                "routing": {
+                    "allocation": {
+                        "include": {
+                            "_tier_preference": "data_content"
+                        }
+                    }
+                },
+                "search": {
+                    "slowlog": {
+                        "level": "trace",
+                        "threshold": {
+                            "query": {
+                                "trace": "0ms"
+                            }
+                        }
+                    }
+                },
+                "refresh_interval": "5s",
+                "number_of_shards": "1",
+                "provided_name": "ocs-2-test-en",
+                "similarity": {
+                    "default": {
+                        "type": "boolean"
+                    }
+                },
+                "max_result_window": "10000",
+                "creation_date": "1732774286275",
+                "analysis": {
+                    "filter": {
+                        "normalize_punctuation": {
+                            "pattern": "[.,']+",
+                            "type": "pattern_replace",
+                            "replacement": "."
+                        },
+                        "remove_thousand_separator": {
+                            "pattern": "\\.(\\d{3,})",
+                            "type": "pattern_replace",
+                            "replacement": "$1"
+                        },
+                        "custom_stemmer": {
+                            "type": "stemmer",
+                            "language": "light_english"
+                        },
+                        "capture_separated_units": {
+                            "type": "pattern_capture",
+                            "patterns": "\\d\\s+[a-zA-Z]+"
+                        },
+                        "glued_shingle": {
+                            "token_separator": "",
+                            "type": "shingle"
+                        },
+                        "float_trunc": {
+                            "pattern": "(\\d+)\\.\\d+([a-z]+)",
+                            "type": "pattern_replace",
+                            "replacement": "$1$2"
+                        },
+                        "remove_whitespace": {
+                            "pattern": "\\s+",
+                            "type": "pattern_replace",
+                            "replacement": ""
+                        },
+                        "custom_stop_filter": {
+                            "type": "stop",
+                            "stopwords": "_english_"
+                        },
+                        "inch_unit": {
+                            "pattern": "\"",
+                            "type": "pattern_replace",
+                            "replacement": ""
+                        }
+                    },
+                    "char_filter": {
+                        "word_border_marker": {
+                            "pattern": "\\b",
+                            "type": "pattern_replace",
+                            "replacement": "_"
+                        },
+                        "html": {
+                            "type": "html_strip"
+                        },
+                        "irrelevant_chars": {
+                            "pattern": "[^\\p{L}\\d_-]",
+                            "type": "pattern_replace",
+                            "replacement": " "
+                        },
+                        "word_border_mark_dedup": {
+                            "pattern": "_{2,}",
+                            "type": "pattern_replace",
+                            "replacement": "_"
+                        }
+                    },
+                    "analyzer": {
+                        "standard": {
+                            "filter": [
+                                "lowercase",
+                                "custom_stop_filter",
+                                "custom_stemmer"
+                            ],
+                            "char_filter": [
+                                "html",
+                                "irrelevant_chars"
+                            ],
+                            "type": "custom",
+                            "tokenizer": "standard"
+                        },
+                        "minimal": {
+                            "filter": [
+                                "lowercase"
+                            ],
+                            "char_filter": [
+                                "html",
+                                "irrelevant_chars"
+                            ],
+                            "type": "custom",
+                            "tokenizer": "whitespace"
+                        },
+                        "category_analyzer": {
+                            "tokenizer": "path_hierarchy"
+                        },
+                        "filter_normalizer": {
+                            "filter": [
+                                "lowercase"
+                            ],
+                            "type": "custom",
+                            "tokenizer": "keyword"
+                        },
+                        "id_sku_analyzer": {
+                            "filter": [
+                                "remove_whitespace",
+                                "lowercase"
+                            ],
+                            "type": "custom",
+                            "tokenizer": "keyword"
+                        },
+                        "shingles": {
+                            "filter": [
+                                "lowercase",
+                                "glued_shingle"
+                            ],
+                            "char_filter": [
+                                "html"
+                            ],
+                            "type": "custom",
+                            "tokenizer": "standard"
+                        },
+                        "ngram": {
+                            "filter": [
+                                "lowercase"
+                            ],
+                            "char_filter": [
+                                "html",
+                                "irrelevant_chars",
+                                "word_border_marker",
+                                "word_border_mark_dedup"
+                            ],
+                            "type": "custom",
+                            "tokenizer": "trigram_tokenizer"
+                        },
+                        "suggest": {
+                            "filter": [
+                                "lowercase",
+                                "glued_shingle"
+                            ],
+                            "type": "custom",
+                            "tokenizer": "whitespace"
+                        },
+                        "num_attributes": {
+                            "filter": [
+                                "capture_separated_units",
+                                "remove_whitespace",
+                                "inch_unit",
+                                "lowercase",
+                                "normalize_punctuation",
+                                "remove_thousand_separator",
+                                "float_trunc",
+                                "unique"
+                            ],
+                            "type": "custom",
+                            "tokenizer": "num_w_unit_tokens"
+                        }
+                    },
+                    "tokenizer": {
+                        "num_w_unit_tokens": {
+                            "pattern": "(\\b[\\d.,']+(\\s*x\\s*[\\d.,']+)*+[\\s-]*[a-zA-Z\\\"]+)",
+                            "type": "pattern",
+                            "group": "1"
+                        },
+                        "trigram_tokenizer": {
+                            "token_chars": [
+                                "letter",
+                                "digit"
+                            ],
+                            "min_gram": "3",
+                            "type": "ngram",
+                            "max_gram": "3"
+                        }
+                    }
+                },
+                "number_of_replicas": "1",
+                "uuid": "jorAJdM8S3y6N2AIdM4ucA",
+                "version": {
+                    "created": "7170899"
+                }
+            }
+        }
+    }
+}

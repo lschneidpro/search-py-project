@@ -1,0 +1,55 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1,
+    "analysis": {
+      "filter": {
+        "german_stop": {
+          "type": "stop",
+          "stopwords": "_german_"
+        },
+        "german_keywords": {
+          "type": "keyword_marker",
+          "keywords": [
+            "Beispiel"
+          ]
+        },
+        "german_stemmer": {
+          "type": "stemmer",
+          "language": "light_german"
+        },
+        "edge_ngram_filter": {
+          "type": "edge_ngram",
+          "min_gram": 1,
+          "max_gram": 12
+        }
+      },
+      "analyzer": {
+        "rebuilt_german": {
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "german_stop",
+            "german_keywords",
+            "german_normalization",
+            "german_stemmer"
+          ]
+        },
+        "completion_analyzer": {
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "german_stop",
+            "edge_ngram_filter"
+          ]
+        },
+        "suggestion_analyzer": {
+          "tokenizer": "whitespace",
+          "filter": [
+            "lowercase"
+          ]
+        }
+      }
+    }
+  }
+}

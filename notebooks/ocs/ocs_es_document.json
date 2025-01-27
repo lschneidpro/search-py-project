@@ -1,0 +1,738 @@
+{
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": {
+            "value": 7,
+            "relation": "eq"
+        },
+        "max_score": 1.0,
+        "hits": [
+            {
+                "_index": "ocs-2-test-en",
+                "_type": "_doc",
+                "_id": "001",
+                "_score": 1.0,
+                "_source": {
+                    "resultData": {
+                        "color": {
+                            "name": "color",
+                            "code": null,
+                            "value": "black"
+                        },
+                        "price": 824.5,
+                        "artNr": "b10",
+                        "category": [
+                            "Sport/Bikes"
+                        ],
+                        "stock": 10,
+                        "title": "Bike C1",
+                        "brand": "Barfoo"
+                    },
+                    "searchData": {
+                        "category_leaf": "Bikes",
+                        "search_combi": [
+                            "Bikes",
+                            "Bike C1",
+                            "Barfoo",
+                            "black"
+                        ],
+                        "category_lvl_0": "Sport",
+                        "category_lvl_1": "Bikes",
+                        "artNr": "b10",
+                        "title": "Bike C1",
+                        "brand": "Barfoo"
+                    },
+                    "termFacetData": [
+                        {
+                            "name": "brand",
+                            "value": "Barfoo"
+                        },
+                        {
+                            "name": "color",
+                            "value": "black"
+                        }
+                    ],
+                    "numberFacetData": [
+                        {
+                            "name": "price",
+                            "value": 824.5
+                        }
+                    ],
+                    "scores": {
+                        "stock": 10
+                    },
+                    "sortData": {
+                        "price": [
+                            824.5
+                        ],
+                        "title": [
+                            "Bike C1"
+                        ]
+                    },
+                    "filterData": {
+                        "stock": 10
+                    },
+                    "id": "001",
+                    "pathFacetData": [
+                        {
+                            "name": "category",
+                            "id": "c1",
+                            "value": "Sport"
+                        },
+                        {
+                            "name": "category",
+                            "id": "c1.1",
+                            "value": "Sport/Bikes"
+                        }
+                    ]
+                }
+            },
+            {
+                "_index": "ocs-2-test-en",
+                "_type": "_doc",
+                "_id": "002",
+                "_score": 1.0,
+                "_source": {
+                    "resultData": {
+                        "color": [
+                            {
+                                "name": "color",
+                                "code": null,
+                                "value": "blue"
+                            },
+                            {
+                                "name": "color",
+                                "code": null,
+                                "value": "silver"
+                            }
+                        ],
+                        "price": 34.2,
+                        "artNr": "a21",
+                        "category": [
+                            "Sport/Bike Accessories"
+                        ],
+                        "stock": 5,
+                        "title": "Helmet X34",
+                        "brand": "Helmut"
+                    },
+                    "searchData": {
+                        "category_leaf": "Bike Accessories",
+                        "search_combi": [
+                            "Bike Accessories",
+                            "Helmet X34",
+                            "Helmut",
+                            "blue",
+                            "silver"
+                        ],
+                        "category_lvl_0": "Sport",
+                        "category_lvl_1": "Bike Accessories",
+                        "artNr": "a21",
+                        "title": "Helmet X34",
+                        "brand": "Helmut"
+                    },
+                    "termFacetData": [
+                        {
+                            "name": "brand",
+                            "value": "Helmut"
+                        },
+                        {
+                            "name": "color",
+                            "value": "blue"
+                        },
+                        {
+                            "name": "color",
+                            "value": "silver"
+                        }
+                    ],
+                    "numberFacetData": [
+                        {
+                            "name": "price",
+                            "value": 34.2
+                        }
+                    ],
+                    "scores": {
+                        "stock": 5
+                    },
+                    "sortData": {
+                        "price": [
+                            34.2
+                        ],
+                        "title": [
+                            "Helmet X34"
+                        ]
+                    },
+                    "filterData": {
+                        "stock": 5
+                    },
+                    "id": "002",
+                    "pathFacetData": [
+                        {
+                            "name": "category",
+                            "id": "c1",
+                            "value": "Sport"
+                        },
+                        {
+                            "name": "category",
+                            "id": "c1.2",
+                            "value": "Sport/Bike Accessories"
+                        }
+                    ]
+                }
+            },
+            {
+                "_index": "ocs-2-test-en",
+                "_type": "_doc",
+                "_id": "003",
+                "_score": 1.0,
+                "_source": {
+                    "resultData": {
+                        "price": 15.99,
+                        "artNr": "b11",
+                        "category": [
+                            "Sport/Bike Accessories"
+                        ],
+                        "stock": 3,
+                        "title": "Bike Light",
+                        "brand": "Barfoo"
+                    },
+                    "searchData": {
+                        "category_leaf": "Bike Accessories",
+                        "search_combi": [
+                            "Bike Accessories",
+                            "Bike Light",
+                            "Barfoo"
+                        ],
+                        "category_lvl_0": "Sport",
+                        "category_lvl_1": "Bike Accessories",
+                        "artNr": "b11",
+                        "title": "Bike Light",
+                        "brand": "Barfoo"
+                    },
+                    "termFacetData": [
+                        {
+                            "name": "brand",
+                            "value": "Barfoo"
+                        }
+                    ],
+                    "numberFacetData": [
+                        {
+                            "name": "price",
+                            "value": 15.99
+                        }
+                    ],
+                    "scores": {
+                        "stock": 3
+                    },
+                    "sortData": {
+                        "price": [
+                            15.99
+                        ],
+                        "title": [
+                            "Bike Light"
+                        ]
+                    },
+                    "filterData": {
+                        "stock": 3
+                    },
+                    "id": "003",
+                    "pathFacetData": [
+                        {
+                            "name": "category",
+                            "id": "c1",
+                            "value": "Sport"
+                        },
+                        {
+                            "name": "category",
+                            "id": "c1.2",
+                            "value": "Sport/Bike Accessories"
+                        }
+                    ]
+                }
+            },
+            {
+                "_index": "ocs-2-test-en",
+                "_type": "_doc",
+                "_id": "004",
+                "_score": 1.0,
+                "_source": {
+                    "resultData": {
+                        "color": {
+                            "name": "color",
+                            "code": null,
+                            "value": "black and yellow"
+                        },
+                        "price": 19.99,
+                        "artNr": "av30",
+                        "category": [
+                            "Apparel/For Him"
+                        ],
+                        "stock": 1,
+                        "title": "Striped Shirt",
+                        "brand": "Avarel"
+                    },
+                    "searchData": {
+                        "category_leaf": "For Him",
+                        "search_combi": [
+                            "For Him",
+                            "Striped Shirt",
+                            "Avarel",
+                            "black and yellow"
+                        ],
+                        "category_lvl_0": "Apparel",
+                        "category_lvl_1": "For Him",
+                        "artNr": "av30",
+                        "title": "Striped Shirt",
+                        "brand": "Avarel"
+                    },
+                    "termFacetData": [
+                        {
+                            "name": "brand",
+                            "value": "Avarel"
+                        },
+                        {
+                            "name": "color",
+                            "value": "black and yellow"
+                        }
+                    ],
+                    "numberFacetData": [
+                        {
+                            "name": "price",
+                            "value": 19.99
+                        }
+                    ],
+                    "scores": {
+                        "stock": 1
+                    },
+                    "sortData": {
+                        "price": [
+                            19.99
+                        ],
+                        "title": [
+                            "Striped Shirt"
+                        ]
+                    },
+                    "filterData": {
+                        "stock": 1
+                    },
+                    "id": "004",
+                    "pathFacetData": [
+                        {
+                            "name": "category",
+                            "id": "c2",
+                            "value": "Apparel"
+                        },
+                        {
+                            "name": "category",
+                            "id": "c2.1",
+                            "value": "Apparel/For Him"
+                        }
+                    ]
+                }
+            },
+            {
+                "_index": "ocs-2-test-en",
+                "_type": "_doc",
+                "_id": "005",
+                "_score": 1.0,
+                "_source": {
+                    "resultData": {
+                        "price": 25.5,
+                        "artNr": "fu19",
+                        "category": [
+                            "Apparel/For Her"
+                        ],
+                        "stock": 0,
+                        "title": "Pretty Skirt",
+                        "brand": "Fluffy Unicorn"
+                    },
+                    "searchData": {
+                        "category_leaf": "For Her",
+                        "search_combi": [
+                            "For Her",
+                            "Pretty Skirt",
+                            "Fluffy Unicorn"
+                        ],
+                        "category_lvl_0": "Apparel",
+                        "category_lvl_1": "For Her",
+                        "artNr": "fu19",
+                        "title": "Pretty Skirt",
+                        "brand": "Fluffy Unicorn"
+                    },
+                    "termFacetData": [
+                        {
+                            "name": "brand",
+                            "value": "Fluffy Unicorn"
+                        }
+                    ],
+                    "numberFacetData": [
+                        {
+                            "name": "price",
+                            "value": 25.5
+                        }
+                    ],
+                    "scores": {
+                        "stock": 0
+                    },
+                    "sortData": {
+                        "price": [
+                            20.0,
+                            25.5
+                        ],
+                        "title": [
+                            "Pretty Skirt"
+                        ]
+                    },
+                    "filterData": {
+                        "stock": 0
+                    },
+                    "id": "005",
+                    "pathFacetData": [
+                        {
+                            "name": "category",
+                            "id": "c2",
+                            "value": "Apparel"
+                        },
+                        {
+                            "name": "category",
+                            "id": "c2.2",
+                            "value": "Apparel/For Her"
+                        }
+                    ],
+                    "variants": [
+                        {
+                            "resultData": {
+                                "color": {
+                                    "name": "color",
+                                    "code": null,
+                                    "value": "pink"
+                                },
+                                "price": 20.0,
+                                "id": "005_0"
+                            },
+                            "searchData": {},
+                            "termFacetData": [
+                                {
+                                    "name": "color",
+                                    "value": "pink"
+                                }
+                            ],
+                            "numberFacetData": [
+                                {
+                                    "name": "price",
+                                    "value": 20.0
+                                }
+                            ],
+                            "scores": {},
+                            "sortData": {
+                                "price": [
+                                    20.0
+                                ]
+                            },
+                            "filterData": {}
+                        },
+                        {
+                            "resultData": {
+                                "color": {
+                                    "name": "color",
+                                    "code": null,
+                                    "value": "black"
+                                },
+                                "price": 25.5,
+                                "id": "005_1"
+                            },
+                            "searchData": {},
+                            "termFacetData": [
+                                {
+                                    "name": "color",
+                                    "value": "black"
+                                }
+                            ],
+                            "numberFacetData": [
+                                {
+                                    "name": "price",
+                                    "value": 25.5
+                                }
+                            ],
+                            "scores": {},
+                            "sortData": {
+                                "price": [
+                                    25.5
+                                ]
+                            },
+                            "filterData": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "_index": "ocs-2-test-en",
+                "_type": "_doc",
+                "_id": "006",
+                "_score": 1.0,
+                "_source": {
+                    "resultData": {
+                        "price": 19.9,
+                        "artNr": "av31",
+                        "category": [
+                            "Apparel/For Her"
+                        ],
+                        "stock": 0,
+                        "title": "striped pants",
+                        "brand": "Avarel"
+                    },
+                    "searchData": {
+                        "category_leaf": "For Her",
+                        "search_combi": [
+                            "For Her",
+                            "striped pants",
+                            "Avarel"
+                        ],
+                        "category_lvl_0": "Apparel",
+                        "category_lvl_1": "For Her",
+                        "artNr": "av31",
+                        "title": "striped pants",
+                        "brand": "Avarel"
+                    },
+                    "termFacetData": [
+                        {
+                            "name": "brand",
+                            "value": "Avarel"
+                        }
+                    ],
+                    "numberFacetData": [
+                        {
+                            "name": "price",
+                            "value": 19.9
+                        }
+                    ],
+                    "scores": {
+                        "stock": 0
+                    },
+                    "sortData": {
+                        "price": [
+                            19.9
+                        ],
+                        "title": [
+                            "striped pants"
+                        ]
+                    },
+                    "filterData": {
+                        "stock": 0
+                    },
+                    "id": "006",
+                    "pathFacetData": [
+                        {
+                            "name": "category",
+                            "id": "c2",
+                            "value": "Apparel"
+                        },
+                        {
+                            "name": "category",
+                            "id": "c2.2",
+                            "value": "Apparel/For Her"
+                        }
+                    ],
+                    "variants": [
+                        {
+                            "resultData": {
+                                "size": {
+                                    "name": "size",
+                                    "code": null,
+                                    "value": "30"
+                                },
+                                "color": {
+                                    "name": "color",
+                                    "code": null,
+                                    "value": "black and yellow"
+                                },
+                                "price": 19.9,
+                                "id": "006_0"
+                            },
+                            "searchData": {},
+                            "termFacetData": [
+                                {
+                                    "name": "color",
+                                    "value": "black and yellow"
+                                },
+                                {
+                                    "name": "size",
+                                    "value": "30"
+                                }
+                            ],
+                            "numberFacetData": [
+                                {
+                                    "name": "price",
+                                    "value": 19.9
+                                }
+                            ],
+                            "scores": {},
+                            "sortData": {
+                                "price": [
+                                    19.9
+                                ]
+                            },
+                            "filterData": {}
+                        },
+                        {
+                            "resultData": {
+                                "size": {
+                                    "name": "size",
+                                    "code": null,
+                                    "value": "31"
+                                },
+                                "color": {
+                                    "name": "color",
+                                    "code": null,
+                                    "value": "black and yellow"
+                                },
+                                "price": 19.9,
+                                "id": "006_1"
+                            },
+                            "searchData": {},
+                            "termFacetData": [
+                                {
+                                    "name": "color",
+                                    "value": "black and yellow"
+                                },
+                                {
+                                    "name": "size",
+                                    "value": "31"
+                                }
+                            ],
+                            "numberFacetData": [
+                                {
+                                    "name": "price",
+                                    "value": 19.9
+                                }
+                            ],
+                            "scores": {},
+                            "sortData": {
+                                "price": [
+                                    19.9
+                                ]
+                            },
+                            "filterData": {}
+                        },
+                        {
+                            "resultData": {
+                                "size": {
+                                    "name": "size",
+                                    "code": null,
+                                    "value": "32"
+                                },
+                                "color": {
+                                    "name": "color",
+                                    "code": null,
+                                    "value": "black and yellow"
+                                },
+                                "price": 19.9,
+                                "id": "006_2"
+                            },
+                            "searchData": {},
+                            "termFacetData": [
+                                {
+                                    "name": "color",
+                                    "value": "black and yellow"
+                                },
+                                {
+                                    "name": "size",
+                                    "value": "32"
+                                }
+                            ],
+                            "numberFacetData": [
+                                {
+                                    "name": "price",
+                                    "value": 19.9
+                                }
+                            ],
+                            "scores": {},
+                            "sortData": {
+                                "price": [
+                                    19.9
+                                ]
+                            },
+                            "filterData": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "_index": "ocs-2-test-en",
+                "_type": "_doc",
+                "_id": "007",
+                "_score": 1.0,
+                "_source": {
+                    "resultData": {
+                        "price": 1234.99,
+                        "artNr": "f12",
+                        "category": [
+                            "Sport/Bikes"
+                        ],
+                        "stock": 10,
+                        "title": "Carbon Bike",
+                        "brand": "Fnord"
+                    },
+                    "searchData": {
+                        "category_leaf": "Bikes",
+                        "search_combi": [
+                            "Bikes",
+                            "Carbon Bike",
+                            "Fnord"
+                        ],
+                        "category_lvl_0": "Sport",
+                        "category_lvl_1": "Bikes",
+                        "artNr": "f12",
+                        "title": "Carbon Bike",
+                        "brand": "Fnord"
+                    },
+                    "termFacetData": [
+                        {
+                            "name": "brand",
+                            "value": "Fnord"
+                        }
+                    ],
+                    "numberFacetData": [
+                        {
+                            "name": "price",
+                            "value": 1234.99
+                        }
+                    ],
+                    "scores": {
+                        "stock": 10
+                    },
+                    "sortData": {
+                        "price": [
+                            1234.99
+                        ],
+                        "title": [
+                            "Carbon Bike"
+                        ]
+                    },
+                    "filterData": {
+                        "stock": 10
+                    },
+                    "id": "007",
+                    "pathFacetData": [
+                        {
+                            "name": "category",
+                            "id": "c1",
+                            "value": "Sport"
+                        },
+                        {
+                            "name": "category",
+                            "id": "c1.1",
+                            "value": "Sport/Bikes"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

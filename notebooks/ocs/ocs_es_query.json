@@ -1,0 +1,264 @@
+{
+    "type": "index_search_slowlog",
+    "timestamp": "2024-11-18T06:35:06,024Z",
+    "level": "TRACE",
+    "component": "i.s.s.query",
+    "cluster": {
+        "name": "docker-cluster",
+        "uuid": "rT9nGAo3RQSZ4uoJkWOp2Q"
+    },
+    "node": {
+        "name": "5fbd7bb8e22b",
+        "id": "jSJrHqyzQBOzjtaffeiXDQ"
+    },
+    "message": "[ocs-1-test-en][0]",
+    "execution": {
+        "took": "2ms",
+        "took_millis": 2,
+        "total_hits": "1 hits",
+        "search_type": "QUERY_THEN_FETCH",
+        "total_shards": 1
+    },
+    "source": {
+        "from": 0,
+        "size": 12,
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                        "function_score": {
+                            "query": {
+                                "match_all": {
+                                    "boost": 1.0,
+                                    "_name": "_match_all"
+                                }
+                            },
+                            "functions": [
+                                {
+                                    "filter": {
+                                        "match_all": {
+                                            "boost": 1.0
+                                        }
+                                    },
+                                    "weight": 2.5,
+                                    "field_value_factor": {
+                                        "field": "scores.stock",
+                                        "factor": 1.0,
+                                        "missing": 0.0,
+                                        "modifier": "none"
+                                    }
+                                }
+                            ],
+                            "score_mode": "sum",
+                            "boost_mode": "avg",
+                            "max_boost": 3.4028235E38,
+                            "boost": 1.0
+                        }
+                    }
+                ],
+                "filter": [
+                    {
+                        "nested": {
+                            "query": {
+                                "bool": {
+                                    "must": [
+                                        {
+                                            "term": {
+                                                "pathFacetData.name": {
+                                                    "value": "category",
+                                                    "boost": 1.0
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "terms": {
+                                                "pathFacetData.value": [
+                                                    "Sport",
+                                                    "Bikes"
+                                                ],
+                                                "boost": 1.0
+                                            }
+                                        }
+                                    ],
+                                    "adjust_pure_negative": true,
+                                    "boost": 1.0
+                                }
+                            },
+                            "path": "pathFacetData",
+                            "ignore_unmapped": false,
+                            "score_mode": "none",
+                            "boost": 1.0
+                        }
+                    }
+                ],
+                "should": [
+                    {
+                        "nested": {
+                            "query": {
+                                "nested": {
+                                    "query": {
+                                        "bool": {
+                                            "must": [
+                                                {
+                                                    "term": {
+                                                        "variants.termFacetData.name": {
+                                                            "value": "color",
+                                                            "boost": 1.0
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "term": {
+                                                        "variants.termFacetData.value.normalized": {
+                                                            "value": "black",
+                                                            "boost": 1.0
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "adjust_pure_negative": true,
+                                            "boost": 1.0
+                                        }
+                                    },
+                                    "path": "variants.termFacetData",
+                                    "ignore_unmapped": false,
+                                    "score_mode": "none",
+                                    "boost": 1.0
+                                }
+                            },
+                            "path": "variants",
+                            "ignore_unmapped": false,
+                            "score_mode": "avg",
+                            "boost": 1.0,
+                            "inner_hits": {
+                                "ignore_unmapped": false,
+                                "from": 0,
+                                "size": 2,
+                                "version": false,
+                                "seq_no_primary_term": false,
+                                "explain": false,
+                                "track_scores": false,
+                                "_source": {
+                                    "includes": [
+                                        "variants.resultData.*"
+                                    ],
+                                    "excludes": []
+                                }
+                            }
+                        }
+                    }
+                ],
+                "adjust_pure_negative": true,
+                "boost": 1.0
+            }
+        },
+        "post_filter": {
+            "bool": {
+                "should": [
+                    {
+                        "nested": {
+                            "query": {
+                                "bool": {
+                                    "must": [
+                                        {
+                                            "term": {
+                                                "termFacetData.name": {
+                                                    "value": "color",
+                                                    "boost": 1.0
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "term": {
+                                                "termFacetData.value.normalized": {
+                                                    "value": "black",
+                                                    "boost": 1.0
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "adjust_pure_negative": true,
+                                    "boost": 1.0
+                                }
+                            },
+                            "path": "termFacetData",
+                            "ignore_unmapped": false,
+                            "score_mode": "none",
+                            "boost": 1.0
+                        }
+                    }
+                ],
+                "adjust_pure_negative": true,
+                "boost": 1.0
+            }
+        },
+        "_source": {
+            "includes": [
+                "resultData.*"
+            ],
+            "excludes": []
+        },
+        "aggregations": {
+            "_exclusive_for_color": {
+                "filter": {
+                    "match_all": {
+                        "boost": 1.0
+                    }
+                },
+                "aggregations": {
+                    "_variants": {
+                        "nested": {
+                            "path": "variants"
+                        },
+                        "aggregations": {
+                            "TermFacetCreatorAggregation": {
+                                "nested": {
+                                    "path": "variants.termFacetData"
+                                },
+                                "aggregations": {
+                                    "_filtered": {
+                                        "filter": {
+                                            "bool": {
+                                                "must": [
+                                                    {
+                                                        "terms": {
+                                                            "variants.termFacetData.name": [
+                                                                "color"
+                                                            ],
+                                                            "boost": 1.0
+                                                        }
+                                                    }
+                                                ],
+                                                "adjust_pure_negative": true,
+                                                "boost": 1.0
+                                            }
+                                        },
+                                        "aggregations": {
+                                            "_names": {
+                                                "terms": {
+                                                    "field": "variants.termFacetData.name",
+                                                    "size": 16,
+                                                    "min_doc_count": 1,
+                                                    "shard_min_doc_count": 0,
+                                                    "show_term_doc_count_error": false,
+                                                    "order": [
+                                                        {
+                                                            "_count": "desc"
+                                                        },
+                                                        {
+                                                            "_key": "asc"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
